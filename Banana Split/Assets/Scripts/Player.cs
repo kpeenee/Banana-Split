@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody rb;
+    LineRenderer lr;
 
-    [Header("Player moovement")]
+    [Header("Player movement")]
     [SerializeField] float moveSpeed = 5f;
 
     [Header("Player Projectile")]
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     {
         //Get rigidbody on player
         rb = GetComponent<Rigidbody>();
+        lr = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -35,18 +37,20 @@ public class Player : MonoBehaviour
             if(plane.Raycast(ray,out distanceToPlane))
             {
                 startPos = ray.GetPoint(distanceToPlane);
-                Debug.Log(startPos);
+                lr.enabled = true;
+                lr.SetPosition(0, startPos);
             }
         }
 
         if (Input.GetMouseButton(0))
         {
             endPos = shootPoint.position;
-            Debug.Log(endPos);
+            lr.SetPosition(1, endPos);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            lr.enabled = false;
             Fire(startPos,endPos);
         }
     }
