@@ -15,6 +15,21 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Plane plane = new Plane(Vector3.forward, 0f);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distanceToPlane;
+
+            if(plane.Raycast(ray,out distanceToPlane))
+            {
+                Debug.Log(ray.GetPoint(distanceToPlane));
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         float inputHorizon = Input.GetAxis("Horizontal");
