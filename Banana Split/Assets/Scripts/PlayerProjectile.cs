@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.gameObject.tag == "Player")
+        {
+            PickUp(collision.gameObject.GetComponent<Player>());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PickUp(Player player)
     {
-        
+        player.SetCanShoot(true);
+        player.transform.localScale = new Vector3(1, 1, 1);
+        Destroy(gameObject);
     }
+
 }
