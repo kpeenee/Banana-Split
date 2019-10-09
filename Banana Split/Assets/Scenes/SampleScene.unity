@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 313830697}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  shrinkSize: {x: 0.75, y: 0.75, z: 0.75}
   power: 2
   projectile: {fileID: -7197009283434482086, guid: d4e31e0b75b58b94bbdb9fc7f70bd740,
     type: 3}
