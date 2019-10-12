@@ -122,5 +122,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82206fc97c1402444b95ec46097b07c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionVFX: {fileID: 7355241805385410464, guid: 385331639f9a26a4b98af08e5bf64d0d,
-    type: 3}
