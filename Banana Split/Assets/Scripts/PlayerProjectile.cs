@@ -11,7 +11,11 @@ public class PlayerProjectile : MonoBehaviour
         {
             PickUp(collision.gameObject.GetComponent<Player>());
         }
-        
+        else if(collision.gameObject.tag == "Deadly")
+        {
+            FindObjectOfType<Player>().KillPlayer();
+            Destroy(gameObject);
+        }
     }
 
     private void PickUp(Player player)

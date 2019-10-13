@@ -82,4 +82,9 @@ public class Player : MonoBehaviour
     {
         this.canShoot = canShoot;
     }
+
+    public void KillPlayer()
+    {
+        Destroy(gameObject);
+    }
 }
