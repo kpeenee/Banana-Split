@@ -478,7 +478,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &64851563299497390
+--- !u!1001 &1283515012
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 6675522339756491441, guid: b2f4507bfab6e834e81e88e5fca92763,
         type: 3}
       propertyPath: m_Name
-      value: Scene Manager
+      value: Scene Loader
       objectReference: {fileID: 0}
     - target: {fileID: 7450261215866033602, guid: b2f4507bfab6e834e81e88e5fca92763,
         type: 3}
@@ -528,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 7450261215866033602, guid: b2f4507bfab6e834e81e88e5fca92763,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7450261215866033602, guid: b2f4507bfab6e834e81e88e5fca92763,
         type: 3}
@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 5000407346285110928, guid: 2289c3321fd19f44fa58a96b614065ce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5000407346285110928, guid: 2289c3321fd19f44fa58a96b614065ce,
         type: 3}
