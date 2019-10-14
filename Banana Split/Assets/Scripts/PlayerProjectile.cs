@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    [SerializeField] int secsToWait;
     
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,8 +14,10 @@ public class PlayerProjectile : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Deadly")
         {
-            FindObjectOfType<Player>().KillPlayer();
-            Destroy(gameObject);
+            if (FindObjectOfType<Player>())
+            {
+                StartCoroutine(Die());
+            }
         }
     }
 
@@ -23,6 +26,13 @@ public class PlayerProjectile : MonoBehaviour
         player.SetCanShoot(true);
         player.transform.localScale = new Vector3(1, 1, 1);
         Destroy(gameObject);
+    }
+
+    private IEnumerator Die()
+    {
+        FindObjectOfType<Player>().KillPlayer();
+        yield return new WaitForSeconds(secsToWait);
+        FindObjectOfType<SceneLoader>().RestartLevel();
     }
 
 }
