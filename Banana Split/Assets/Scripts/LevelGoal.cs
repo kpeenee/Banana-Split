@@ -8,7 +8,11 @@ public class LevelGoal : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            FindObjectOfType<SceneLoader>().LoadNextLevel();
+            if (collision.gameObject.GetComponent<Player>().GetIsComplete())
+            {
+                FindObjectOfType<SceneLoader>().LoadNextLevel();
+            }
+            
         }
     }
 }

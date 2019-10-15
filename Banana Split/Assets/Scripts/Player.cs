@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [Header("Player")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Vector3 shrinkSize = new Vector3(0.75f, 0.75f, 0.75f);
+    private bool isComplete = true;
 
     [Header("Player Projectile")]
     [SerializeField] float power = 2f;
@@ -75,6 +76,7 @@ public class Player : MonoBehaviour
         PlayerProjectile playerProjectile = Instantiate(projectile, shootPoint.position, Quaternion.identity) as PlayerProjectile;
         playerProjectile.GetComponent<Rigidbody>().velocity = direction * power;
         transform.localScale = shrinkSize;
+        SetIsComplete(false);
         SetCanShoot(false);
     }
 
@@ -83,8 +85,19 @@ public class Player : MonoBehaviour
         this.canShoot = canShoot;
     }
 
+    public void SetIsComplete(bool isComplete)
+    {
+        this.isComplete = isComplete;
+    }
+
     public void KillPlayer()
     {
         Destroy(gameObject);
     }
+
+    public bool GetIsComplete()
+    {
+        return isComplete;
+    }
+
 }

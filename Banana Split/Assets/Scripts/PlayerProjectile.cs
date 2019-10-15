@@ -24,6 +24,7 @@ public class PlayerProjectile : MonoBehaviour
     private void PickUp(Player player)
     {
         player.SetCanShoot(true);
+        player.SetIsComplete(true);
         player.transform.localScale = new Vector3(1, 1, 1);
         Destroy(gameObject);
     }
