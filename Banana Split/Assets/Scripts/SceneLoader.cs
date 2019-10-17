@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] float timeToWait = 3f;
     public void LoadNextLevel()
     {
         if (SceneManager.GetActiveScene().name != "Level3") 
@@ -25,6 +26,12 @@ public class SceneLoader : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(Restart());
     }
+
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(timeToWait);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    } 
 }

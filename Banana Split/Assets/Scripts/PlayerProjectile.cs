@@ -8,16 +8,16 @@ public class PlayerProjectile : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            PickUp(collision.gameObject.GetComponent<Player>());
-        }
-        else if(collision.gameObject.tag == "Deadly")
+         if (collision.gameObject.tag == "Deadly")
         {
             if (FindObjectOfType<Player>())
             {
-                StartCoroutine(Die());
+                Die();
             }
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            PickUp(collision.gameObject.GetComponent<Player>());
         }
     }
 
@@ -29,10 +29,9 @@ public class PlayerProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator Die()
+    private void Die()
     {
         FindObjectOfType<Player>().KillPlayer();
-        yield return new WaitForSeconds(secsToWait);
         FindObjectOfType<SceneLoader>().RestartLevel();
     }
 
