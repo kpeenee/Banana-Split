@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float power = 2f;
     [SerializeField] PlayerProjectile projectile;
     [SerializeField] Transform shootPoint;
+    [SerializeField] Vector3 projectileRotation = new Vector3(270,180,0);
     private bool canShoot = true;
     private Vector3 startPos;
     private Vector3 endPos;
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
     private void Fire(Vector3 start,Vector3 end)
     {
         Vector3 direction = start - end;
-        PlayerProjectile playerProjectile = Instantiate(projectile, shootPoint.position, Quaternion.identity) as PlayerProjectile;
+        PlayerProjectile playerProjectile = Instantiate(projectile, shootPoint.position,Quaternion.Euler(projectileRotation)) as PlayerProjectile;
         playerProjectile.GetComponent<Rigidbody>().velocity = direction * power;
         transform.localScale = shrinkSize;
         SetIsComplete(false);

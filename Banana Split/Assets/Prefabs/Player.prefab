@@ -157,9 +157,10 @@ MonoBehaviour:
   moveSpeed: 10
   shrinkSize: {x: 0.75, y: 0.75, z: 0.75}
   power: 2
-  projectile: {fileID: -7197009283434482086, guid: d4e31e0b75b58b94bbdb9fc7f70bd740,
+  projectile: {fileID: 218388569219687881, guid: 25156e7a77dbdb14f87e371b9fe5a97e,
     type: 3}
   shootPoint: {fileID: 98172214178875093}
+  projectileRotation: {x: 270, y: 180, z: 0}
 --- !u!120 &98172214187582787
 LineRenderer:
   m_ObjectHideFlags: 0
