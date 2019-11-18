@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Vector3 shrinkSize = new Vector3(0.75f, 0.75f, 0.75f);
     private bool isComplete = true;
+    private Animator anim;
 
     [Header("Player Projectile")]
     [SerializeField] float power = 2f;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         //Get rigidbody on player
         rb = GetComponent<Rigidbody>();
         lr = GetComponent<LineRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -67,6 +69,15 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         float inputHorizon = Input.GetAxis("Horizontal");
+
+        if (inputHorizon != 0)
+        {
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
 
         rb.velocity = new Vector3(inputHorizon * moveSpeed, rb.velocity.y, 0);
     }
