@@ -10,28 +10,26 @@ public class PlayerProjectile : MonoBehaviour
     {
          if (collision.gameObject.tag == "Deadly")
         {
-            if (FindObjectOfType<Player>())
+            if (FindObjectOfType<PeeledPlayer>())
             {
                 Die();
             }
         }
         else if (collision.gameObject.tag == "Player")
         {
-            PickUp(collision.gameObject.GetComponent<Player>());
+            PickUp(collision.gameObject.GetComponent<PeeledPlayer>());
         }
     }
 
-    private void PickUp(Player player)
+    private void PickUp(PeeledPlayer player)
     {
-        player.SetCanShoot(true);
-        player.SetIsComplete(true);
-        player.transform.localScale = new Vector3(1, 1, 1);
+        player.SwitchPlayer();
         Destroy(gameObject);
     }
 
     private void Die()
     {
-        FindObjectOfType<Player>().KillPlayer();
+        FindObjectOfType<PeeledPlayer>().KillPlayer();
         FindObjectOfType<SceneLoader>().RestartLevel();
     }
 

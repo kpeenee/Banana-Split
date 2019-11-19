@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 5894979597299483633}
   - component: {fileID: 5894979597299483634}
   - component: {fileID: 5894979597299483637}
+  - component: {fileID: 1451021371734096340}
   m_Layer: 0
   m_Name: Banana Player
   m_TagString: Player
@@ -353,13 +354,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3848302295e641459993223c8d0cd17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  shrinkSize: {x: 0.75, y: 0.75, z: 0.75}
+  peeledPlayer: {fileID: 6039041693753368864, guid: e3376034c7db84841934dd7980e24361,
+    type: 3}
   power: 2
   projectile: {fileID: 218388569219687881, guid: 25156e7a77dbdb14f87e371b9fe5a97e,
     type: 3}
   shootPoint: {fileID: 5894979595566782727}
   projectileRotation: {x: 270, y: 180, z: 0}
+--- !u!114 &1451021371734096340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517162151818825027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe5e68e21c87be45bfa428a21c58050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &3439374912215657798
 GameObject:
   m_ObjectHideFlags: 0

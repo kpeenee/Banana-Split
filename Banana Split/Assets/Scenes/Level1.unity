@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469291051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.66, y: 2.35, z: 0}
+  m_LocalPosition: {x: 5.66, y: 3.18, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -933,17 +933,28 @@ PrefabInstance:
     - target: {fileID: 5289560999221870229, guid: a4e3cb452c59def468610496f9534343,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.7069834
       objectReference: {fileID: 0}
     - target: {fileID: 5289560999221870229, guid: a4e3cb452c59def468610496f9534343,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7072302
       objectReference: {fileID: 0}
     - target: {fileID: 5289560999221870229, guid: a4e3cb452c59def468610496f9534343,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5289560999221870229, guid: a4e3cb452c59def468610496f9534343,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894979597299483637, guid: a4e3cb452c59def468610496f9534343,
+        type: 3}
+      propertyPath: peeledPlayer
+      value: 
+      objectReference: {fileID: 6039041693753368864, guid: e3376034c7db84841934dd7980e24361,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e3cb452c59def468610496f9534343, type: 3}
