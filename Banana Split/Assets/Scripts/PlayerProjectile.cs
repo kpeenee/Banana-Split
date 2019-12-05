@@ -23,7 +23,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private void PickUp(PeeledPlayer player)
     {
-        player.SwitchPlayer();
+        player.Catch();
         Destroy(gameObject);
     }
 

@@ -5,6 +5,17 @@ using UnityEngine;
 public class PeeledPlayer : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    public void Catch()
+    {
+        anim.SetBool("Catch", true);
+    }
     public void SwitchPlayer()
     {
         Instantiate(player, transform.position, Quaternion.Euler(0, 90, 0));
