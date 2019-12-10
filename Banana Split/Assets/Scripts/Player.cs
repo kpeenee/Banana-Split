@@ -30,36 +30,53 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                //Get position clicked
-                Plane plane = new Plane(Vector3.forward, 0f);
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                float distanceToPlane;
-
-                if (plane.Raycast(ray, out distanceToPlane))
-                {
-                    startPos = ray.GetPoint(distanceToPlane);
-                    lr.enabled = true;
-                    lr.SetPosition(0, startPos);
-                }
-            }
-
-            if (Input.GetMouseButton(0))
-            {
-                endPos = shootPoint.position;
-                lr.SetPosition(1, endPos);
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                lr.enabled = false;
-                Fire(startPos, endPos);
-            }
+        ShootBanana();
     }
 
-  
+    private void ShootBanana()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Get position clicked
+            Plane plane = new Plane(Vector3.forward, 0f);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distanceToPlane;
+
+            if (plane.Raycast(ray, out distanceToPlane))
+            {
+                startPos = ray.GetPoint(distanceToPlane);
+                lr.enabled = true;
+                lr.SetPosition(0, startPos);
+            }
+        }
+
+        Aim();
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            lr.enabled = false;
+            Fire(startPos, endPos);
+        }
+    }
+
+    private void Aim()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            endPos = shootPoint.position;
+            lr.SetPosition(1, endPos);
+
+            Plane plane = new Plane(Vector3.forward, 0f);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distanceToPlane;
+
+            if (plane.Raycast(ray, out distanceToPlane))
+            {
+                startPos = ray.GetPoint(distanceToPlane);
+                lr.SetPosition(0, startPos);
+            }
+        }
+    }
 
     private void Fire(Vector3 start, Vector3 end)
     {
