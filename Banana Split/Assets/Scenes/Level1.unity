@@ -692,6 +692,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5894979597299483633, guid: a4e3cb452c59def468610496f9534343,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5.538487
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894979597299483633, guid: a4e3cb452c59def468610496f9534343,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.19699562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894979597299483637, guid: a4e3cb452c59def468610496f9534343,
+        type: 3}
+      propertyPath: peeledPlayer
+      value: 
+      objectReference: {fileID: 6039041693753368864, guid: e3376034c7db84841934dd7980e24361,
+        type: 3}
     - target: {fileID: 4149614948897934259, guid: a4e3cb452c59def468610496f9534343,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -747,12 +763,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5894979597299483637, guid: a4e3cb452c59def468610496f9534343,
-        type: 3}
-      propertyPath: peeledPlayer
-      value: 
-      objectReference: {fileID: 6039041693753368864, guid: e3376034c7db84841934dd7980e24361,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e3cb452c59def468610496f9534343, type: 3}
 --- !u!1001 &8275850267615999718
