@@ -17,6 +17,7 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Platform follows waypoints
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentPoint].position, Time.deltaTime * speed);
         if(transform.position == waypoints[currentPoint].position)
         {
@@ -26,6 +27,26 @@ public class MovingPlatform : MonoBehaviour
                 currentPoint = 0;
             }
             
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Set moving platform as parent so player moves with it
+        Debug.Log("collision");
+        if (collision.gameObject.tag == "Player")
+        {
+            
+            collision.gameObject.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        //Stops players parent being moving platform so stops moving with it
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.transform.SetParent(null);
         }
     }
 }
