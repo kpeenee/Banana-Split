@@ -7,6 +7,8 @@ public class MovingPlatform : MonoBehaviour
 
     [SerializeField] List<Transform> waypoints = new List<Transform>();
     [SerializeField] float speed;
+    [SerializeField] int waitTime = 0;
+    bool platformMoving = true;
     int currentPoint;
     // Start is called before the first frame update
     void Start()
@@ -17,16 +19,23 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (platformMoving) { PlatformMove(); }
+        
+    }
+
+    private void PlatformMove()
+    {
         //Platform follows waypoints
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentPoint].position, Time.deltaTime * speed);
-        if(transform.position == waypoints[currentPoint].position)
+        if (transform.position == waypoints[currentPoint].position)
         {
+            StartCoroutine(Wait());
             currentPoint++;
             if (currentPoint >= waypoints.Count)
             {
                 currentPoint = 0;
             }
-            
+
         }
     }
 
@@ -48,5 +57,12 @@ public class MovingPlatform : MonoBehaviour
         {
             collision.gameObject.transform.SetParent(null);
         }
+    }
+
+    IEnumerator Wait()
+    {
+        platformMoving = false;
+        yield return new WaitForSeconds(waitTime);
+        platformMoving = true;
     }
 }
