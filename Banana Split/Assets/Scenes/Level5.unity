@@ -525,6 +525,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8908041879339977109, guid: f111fd81f79ab1d44936e1ef9d02c817,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 99f1faf289be2e641a894acd5093c322,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f111fd81f79ab1d44936e1ef9d02c817, type: 3}
 --- !u!1 &704087688
@@ -930,6 +936,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8908041879339977109, guid: f111fd81f79ab1d44936e1ef9d02c817,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 99f1faf289be2e641a894acd5093c322,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f111fd81f79ab1d44936e1ef9d02c817, type: 3}
 --- !u!1001 &1619684391
@@ -1191,6 +1203,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262831811265467258, guid: 646763ea2ce0d654ab9509a9eefbdc20,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 99f1faf289be2e641a894acd5093c322,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646763ea2ce0d654ab9509a9eefbdc20, type: 3}
 --- !u!1001 &2034929702
@@ -1418,5 +1436,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262831811265467258, guid: 646763ea2ce0d654ab9509a9eefbdc20,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 99f1faf289be2e641a894acd5093c322,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 646763ea2ce0d654ab9509a9eefbdc20, type: 3}
