@@ -9,6 +9,19 @@ public class SceneLoader : MonoBehaviour
 
     
     [SerializeField] float timeToWait = 3f;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)&& SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            LoadMainMenu();
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            RestarNoWait();
+        }
+    }
     public void LoadNextLevel()
     {
         if (SceneManager.sceneCountInBuildSettings - 1 != SceneManager.GetActiveScene().buildIndex) 
@@ -26,6 +39,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void RestartLevel()
     {
         StartCoroutine(Restart());
@@ -36,4 +54,9 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     } 
+
+    public void RestarNoWait()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
